@@ -1,0 +1,15 @@
+.main-layout {
+  display: flex;
+}
+
+.content-area {
+  flex: 1;
+  margin-left: 250px;  /* Ancho de la sidebar */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
