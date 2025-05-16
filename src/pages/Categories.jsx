@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MainLayout from "../layouts/MainLayout";
+import '../styles/categories.css';
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);
@@ -40,7 +41,7 @@ const Categories = () => {
 
   return (
     <MainLayout>
-      <div>
+      <div className="categories-container">
         <table>
           <thead>
             <tr>
