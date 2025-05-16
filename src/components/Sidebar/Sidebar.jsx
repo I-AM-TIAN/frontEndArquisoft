@@ -1,7 +1,15 @@
 import React from 'react';
 import './Sidebar.css';  // Estilos de la sidebar
+import { useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    navigate('/');
+  };
+
   return (
     <div className="sidebar">
       <ul>
@@ -15,8 +23,9 @@ const Sidebar = () => {
         <li><a href="">Reporte de productos</a></li>
         <li><a href="">Dirección de envío</a></li>
         <li><a href="/metodos-de-pago">Métodos de pago</a></li>
-        <li><a href="/settings">Settings</a></li>
-        <li><a href="/profile">Profile</a></li>
+        <li>
+          <a href="" onClick={handleLogout}>Cerrar sesion</a>
+        </li>
       </ul>
     </div>
   );

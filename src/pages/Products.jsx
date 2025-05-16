@@ -10,32 +10,31 @@ const Products = () => {
   useEffect(() => {
     // Función para obtener los productos y categorías desde la API
     const fetchData = async () => {
-      try {
-        const token = localStorage.getItem('token'); // Obtener el JWT del localStorage
-        const [productsResponse, categoriesResponse] = await Promise.all([
-          fetch("http://localhost:3000/api/products"),
-          fetch("http://localhost:3000/api/categories"),
-          {
-          headers: {
-            'Authorization': `Bearer ${token}` // Incluir el JWT en la cabecera
-          }
-        }]);
-
-        if (!productsResponse.ok || !categoriesResponse.ok) {
-          throw new Error("Error al obtener los datos");
-        }
-
-        const productsData = await productsResponse.json();
-        const categoriesData = await categoriesResponse.json();
-
-        setProducts(productsData); // Actualiza el estado con los productos obtenidos
-        setCategories(categoriesData); // Actualiza el estado con las categorías obtenidas
-      } catch (err) {
-        setError(err.message); // Maneja errores
-      } finally {
-        setLoading(false); // Finaliza el estado de carga
-      }
+  try {
+    const token = localStorage.getItem('token'); // Obtener el JWT del localStorage
+    const headers = {
+      'Authorization': `Bearer ${token}`
     };
+    const [productsResponse, categoriesResponse] = await Promise.all([
+      fetch("http://localhost:3000/api/products", { headers }),
+      fetch("http://localhost:3000/api/categories", { headers })
+    ]);
+
+    if (!productsResponse.ok || !categoriesResponse.ok) {
+      throw new Error("Error al obtener los datos");
+    }
+
+    const productsData = await productsResponse.json();
+    const categoriesData = await categoriesResponse.json();
+
+    setProducts(productsData); // Actualiza el estado con los productos obtenidos
+    setCategories(categoriesData); // Actualiza el estado con las categorías obtenidas
+  } catch (err) {
+    setError(err.message); // Maneja errores
+  } finally {
+    setLoading(false); // Finaliza el estado de carga
+  }
+};
 
     fetchData();
   }, []); // El array vacío asegura que la petición se haga solo al montar el componente
@@ -64,6 +63,7 @@ const Products = () => {
               <th>Precio</th>
               <th>Stock</th>
               <th>Categoría</th>
+              <th>Proveedor</th>
             </tr>
           </thead>
           <tbody>
@@ -74,6 +74,7 @@ const Products = () => {
                 <td>{product.price}</td>
                 <td>{product.stock}</td>
                 <td>{getCategoryName(product.categoryId)}</td> {/* Mostrar el nombre de la categoría */}
+                <td>{product.proveedorId}</td>
               </tr>
             ))}
           </tbody>

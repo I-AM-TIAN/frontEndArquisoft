@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // <-- Agrega esta línea
 import '../styles/Login.css';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate(); // <-- Agrega esta línea
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     try {
-      
       const response = await fetch('http://localhost:4000/api/auth/login', {
         method: 'POST',
         headers: {
@@ -22,12 +23,9 @@ const Login = () => {
         throw new Error('Credenciales incorrectas');
       }
       const data = await response.json();
-      // Aquí recibes el token JWT
       const token = data.token;
-      // Puedes guardarlo en localStorage o manejarlo como prefieras
       localStorage.setItem('token', token);
-      // Redirigir o mostrar mensaje de éxito
-      alert('Inicio de sesión exitoso');
+      navigate('/dashboard'); // <-- Redirige aquí
     } catch (err) {
       setError(err.message);
     }
