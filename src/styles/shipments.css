@@ -1,0 +1,140 @@
+.shipments-container {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 25px 30px;
+  background-color: #ffffffdd;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.shipments-container h2 {
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+thead tr {
+  background-color: #4b3f99;
+  color: #fff;
+}
+
+th, td {
+  padding: 14px 18px;
+  border-bottom: 1.5px solid #ddd;
+  text-align: left;
+  vertical-align: middle;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: #d6cdf7;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+tbody td:first-child {
+  font-weight: 600;
+  color: #4b3f99;
+}
+
+tbody td:last-child {
+  color: #555;
+}
+
+/* Formulario de envíos */
+.shipment-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.shipment-form input {
+  padding: 8px 12px;
+  border: 1.5px solid #b5a7f7;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.2s;
+  background: #f7f5ff;
+}
+
+.shipment-form input:focus {
+  border: 1.5px solid #4b3f99;
+}
+
+/* Botones */
+.shipment-form button,
+.edit-btn,
+.delete-btn,
+.cancel-btn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.shipment-form button[type="submit"] {
+  background: #4b3f99;
+  color: #fff;
+}
+
+.shipment-form .cancel-btn {
+  background: #bbb;
+  color: #fff;
+  margin-left: 6px;
+}
+
+.edit-btn {
+  background: #7c5fe6;
+  color: #fff;
+  margin-right: 6px;
+}
+
+.delete-btn {
+  background: #e53935;
+  color: #fff;
+}
+
+.edit-btn:hover,
+.shipment-form button[type="submit"]:hover {
+  background: #372e6b;
+}
+
+.delete-btn:hover {
+  background: #b71c1c;
+}
+
+.shipment-form .cancel-btn:hover {
+  background: #888;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .shipments-container {
+    margin: 25px 10px;
+    padding: 20px 10px;
+  }
+  table {
+    font-size: 14px;
+  }
+  th, td {
+    padding: 12px 10px;
+  }
+  .shipment-form {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

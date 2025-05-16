@@ -1,0 +1,102 @@
+.salesreport-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 25px 30px;
+  background-color: #ffffffdd;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.salesreport-container h2 {
+  margin-bottom: 20px;
+}
+
+.report-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.report-form input[type="date"] {
+  padding: 8px 12px;
+  border: 1.5px solid #b5a7f7;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.2s;
+  background: #f7f5ff;
+}
+
+.report-form input[type="date"]:focus {
+  border: 1.5px solid #4b3f99;
+}
+
+.report-form button {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  background: #4b3f99;
+  color: #fff;
+  transition: background 0.2s;
+}
+
+.report-form button:hover {
+  background: #372e6b;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+thead tr {
+  background-color: #4b3f99;
+  color: #fff;
+}
+
+th, td {
+  padding: 14px 18px;
+  border-bottom: 1.5px solid #ddd;
+  text-align: left;
+  vertical-align: middle;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: #d6cdf7;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.total-row td {
+  background: #ede7fa;
+  color: #4b3f99;
+  font-size: 17px;
+}
+
+@media (max-width: 700px) {
+  .salesreport-container {
+    margin: 25px 10px;
+    padding: 20px 10px;
+  }
+  table {
+    font-size: 14px;
+  }
+  th, td {
+    padding: 12px 10px;
+  }
+  .report-form {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

@@ -10,6 +10,8 @@ import PaymentMethods from './pages/PaymentMethods';
 import MainLayout from './layouts/MainLayout';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Shipments from './pages/Shipments';
+import SalesReport from './pages/SalesReport';
 
 const App = () => {
   // Helper to check authentication
@@ -44,6 +46,8 @@ const App = () => {
                   <Route path="ventas" element={<Sales />} />
                   <Route path="metodos-de-pago" element={<PaymentMethods />} />
                   <Route path="proveedores" element={<Providers />} />
+                  <Route path="envios" element={<Shipments />} />
+                  <Route path="reporte-ventas" element={<SalesReport />} />
                 </Routes>
               </MainLayout>
             </ProtectedRoute>

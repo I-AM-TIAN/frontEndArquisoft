@@ -18,11 +18,11 @@ const Sidebar = () => {
         <li><a href="/productos">Productos</a></li>
         <li><a href="/proveedores">Proveedores</a></li>
         <li><a href="/clientes">Clientes</a></li>
-        {/*
         <li><a href="/ventas">Ventas</a></li>
-        <li><a href="">Reporte de ventas</a></li>
+        <li><a href="/envios">Direcciones de envío</a></li>
+        <li><a href="/reporte-ventas">Reporte de ventas</a></li>
+        {/*
         <li><a href="">Reporte de productos</a></li>*/}
-        <li><a href="">Dirección de envío</a></li>
         <li><a href="/metodos-de-pago">Métodos de pago</a></li>
         <li>
           <a href="" onClick={handleLogout}>Cerrar sesion</a>
