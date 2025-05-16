@@ -12,6 +12,8 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Shipments from './pages/Shipments';
 import SalesReport from './pages/SalesReport';
+import ProductSalesReport from './pages/ProductSalesReport';
+import Inventory from './pages/Inventory';
 
 const App = () => {
   // Helper to check authentication
@@ -48,6 +50,8 @@ const App = () => {
                   <Route path="proveedores" element={<Providers />} />
                   <Route path="envios" element={<Shipments />} />
                   <Route path="reporte-ventas" element={<SalesReport />} />
+                  <Route path="reporte-ventas-productos" element={<ProductSalesReport />} />
+                  <Route path="inventario" element={<Inventory />} />
                 </Routes>
               </MainLayout>
             </ProtectedRoute>
