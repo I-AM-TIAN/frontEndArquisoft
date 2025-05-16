@@ -1,5 +1,5 @@
-.products-container {
-  max-width: 900px;
+.paymentmethods-container {
+  max-width: 700px;
   margin: 50px auto;
   padding: 25px 30px;
   background-color: #ffffffdd;
@@ -42,24 +42,19 @@ tbody td:first-child {
   color: #4b3f99;
 }
 
-tbody td:nth-child(2) {
-  font-weight: 500;
-}
-
 tbody td:last-child {
   color: #555;
 }
 
-/* Formulario de productos */
-.product-form {
+/* Formulario de métodos de pago */
+.paymentmethod-form {
   display: flex;
   gap: 12px;
   margin-bottom: 24px;
   flex-wrap: wrap;
 }
 
-.product-form input,
-.product-form select {
+.paymentmethod-form input {
   padding: 8px 12px;
   border: 1.5px solid #b5a7f7;
   border-radius: 6px;
@@ -69,13 +64,12 @@ tbody td:last-child {
   background: #f7f5ff;
 }
 
-.product-form input:focus,
-.product-form select:focus {
+.paymentmethod-form input:focus {
   border: 1.5px solid #4b3f99;
 }
 
 /* Botones */
-.product-form button,
+.paymentmethod-form button,
 .edit-btn,
 .delete-btn,
 .cancel-btn {
@@ -88,12 +82,12 @@ tbody td:last-child {
   transition: background 0.2s;
 }
 
-.product-form button[type="submit"] {
+.paymentmethod-form button[type="submit"] {
   background: #4b3f99;
   color: #fff;
 }
 
-.product-form .cancel-btn {
+.paymentmethod-form .cancel-btn {
   background: #bbb;
   color: #fff;
   margin-left: 6px;
@@ -111,7 +105,7 @@ tbody td:last-child {
 }
 
 .edit-btn:hover,
-.product-form button[type="submit"]:hover {
+.paymentmethod-form button[type="submit"]:hover {
   background: #372e6b;
 }
 
@@ -119,15 +113,15 @@ tbody td:last-child {
   background: #b71c1c;
 }
 
-.product-form .cancel-btn:hover {
+.paymentmethod-form .cancel-btn:hover {
   background: #888;
 }
 
 /* Responsive */
-@media (max-width: 700px) {
-  .products-container {
-    margin: 25px 10px;
-    padding: 20px 10px;
+@media (max-width: 600px) {
+  .paymentmethods-container {
+    margin: 25px 15px;
+    padding: 20px 15px;
   }
   table {
     font-size: 14px;
@@ -135,7 +129,7 @@ tbody td:last-child {
   th, td {
     padding: 12px 10px;
   }
-  .product-form {
+  .paymentmethod-form {
     flex-direction: column;
     gap: 8px;
   }

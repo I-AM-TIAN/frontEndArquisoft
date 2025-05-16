@@ -52,6 +52,77 @@ tbody td:last-child {
   color: #555;
 }
 
+/* Formulario de categorías */
+.category-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.category-form input {
+  padding: 8px 12px;
+  border: 1.5px solid #b5a7f7;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.2s;
+  background: #f7f5ff;
+}
+
+.category-form input:focus {
+  border: 1.5px solid #4b3f99;
+}
+
+/* Botones */
+.category-form button,
+.edit-btn,
+.delete-btn,
+.cancel-btn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.category-form button[type="submit"] {
+  background: #4b3f99;
+  color: #fff;
+}
+
+.category-form .cancel-btn {
+  background: #bbb;
+  color: #fff;
+  margin-left: 6px;
+}
+
+.edit-btn {
+  background: #7c5fe6;
+  color: #fff;
+  margin-right: 6px;
+}
+
+.delete-btn {
+  background: #e53935;
+  color: #fff;
+}
+
+.edit-btn:hover,
+.category-form button[type="submit"]:hover {
+  background: #372e6b;
+}
+
+.delete-btn:hover {
+  background: #b71c1c;
+}
+
+.category-form .cancel-btn:hover {
+  background: #888;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   .categories-container {
@@ -64,5 +135,8 @@ tbody td:last-child {
   th, td {
     padding: 12px 10px;
   }
+  .category-form {
+    flex-direction: column;
+    gap: 8px;
+  }
 }
-

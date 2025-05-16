@@ -1,4 +1,4 @@
-.products-container {
+.sales-container {
   max-width: 900px;
   margin: 50px auto;
   padding: 25px 30px;
@@ -7,6 +7,10 @@
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
+}
+
+.sales-container h2 {
+  margin-bottom: 20px;
 }
 
 table {
@@ -42,24 +46,20 @@ tbody td:first-child {
   color: #4b3f99;
 }
 
-tbody td:nth-child(2) {
-  font-weight: 500;
-}
-
 tbody td:last-child {
   color: #555;
 }
 
-/* Formulario de productos */
-.product-form {
+/* Formulario de ventas */
+.sale-form {
   display: flex;
   gap: 12px;
   margin-bottom: 24px;
   flex-wrap: wrap;
 }
 
-.product-form input,
-.product-form select {
+.sale-form input,
+.sale-form select {
   padding: 8px 12px;
   border: 1.5px solid #b5a7f7;
   border-radius: 6px;
@@ -69,13 +69,13 @@ tbody td:last-child {
   background: #f7f5ff;
 }
 
-.product-form input:focus,
-.product-form select:focus {
+.sale-form input:focus,
+.sale-form select:focus {
   border: 1.5px solid #4b3f99;
 }
 
 /* Botones */
-.product-form button,
+.sale-form button,
 .edit-btn,
 .delete-btn,
 .cancel-btn {
@@ -88,12 +88,12 @@ tbody td:last-child {
   transition: background 0.2s;
 }
 
-.product-form button[type="submit"] {
+.sale-form button[type="submit"] {
   background: #4b3f99;
   color: #fff;
 }
 
-.product-form .cancel-btn {
+.sale-form .cancel-btn {
   background: #bbb;
   color: #fff;
   margin-left: 6px;
@@ -111,7 +111,7 @@ tbody td:last-child {
 }
 
 .edit-btn:hover,
-.product-form button[type="submit"]:hover {
+.sale-form button[type="submit"]:hover {
   background: #372e6b;
 }
 
@@ -119,13 +119,13 @@ tbody td:last-child {
   background: #b71c1c;
 }
 
-.product-form .cancel-btn:hover {
+.sale-form .cancel-btn:hover {
   background: #888;
 }
 
 /* Responsive */
 @media (max-width: 700px) {
-  .products-container {
+  .sales-container {
     margin: 25px 10px;
     padding: 20px 10px;
   }
@@ -135,7 +135,7 @@ tbody td:last-child {
   th, td {
     padding: 12px 10px;
   }
-  .product-form {
+  .sale-form {
     flex-direction: column;
     gap: 8px;
   }
