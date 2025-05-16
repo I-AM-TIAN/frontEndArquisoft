@@ -10,7 +10,12 @@ const Sales = () => {
     // Función para obtener las ventas desde la API
     const fetchSales = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/sales");
+        const token = localStorage.getItem('token'); // Obtener el JWT del localStorage
+        const response = await fetch("http://localhost:3000/api/sales",{
+          headers: {
+            'Authorization': `Bearer ${token}` // Incluir el JWT en la cabecera
+          }
+        });
         if (!response.ok) {
           throw new Error("Error al obtener las ventas");
         }

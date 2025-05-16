@@ -11,10 +11,15 @@ const Products = () => {
     // Función para obtener los productos y categorías desde la API
     const fetchData = async () => {
       try {
+        const token = localStorage.getItem('token'); // Obtener el JWT del localStorage
         const [productsResponse, categoriesResponse] = await Promise.all([
           fetch("http://localhost:3000/api/products"),
           fetch("http://localhost:3000/api/categories"),
-        ]);
+          {
+          headers: {
+            'Authorization': `Bearer ${token}` // Incluir el JWT en la cabecera
+          }
+        }]);
 
         if (!productsResponse.ok || !categoriesResponse.ok) {
           throw new Error("Error al obtener los datos");

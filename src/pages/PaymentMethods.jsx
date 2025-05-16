@@ -10,7 +10,12 @@ const PaymentMethods = () => {
     // Función para obtener los métodos de pago desde la API
     const fetchPaymentMethods = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/payment-methods");
+        const token = localStorage.getItem('token'); // Obtener el JWT del localStorage
+        const response = await fetch("http://localhost:3000/api/payment-methods", {
+          headers: {
+            'Authorization': `Bearer ${token}` // Incluir el JWT en la cabecera
+          }
+        });
         if (!response.ok) {
           throw new Error("Error al obtener los métodos de pago");
         }

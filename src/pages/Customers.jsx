@@ -10,7 +10,12 @@ const Customers = () => {
     // Función para obtener los clientes desde la API
     const fetchCustomers = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/customers");
+        const token = localStorage.getItem('token'); // Obtener el JWT del localStorage
+        const response = await fetch("http://localhost:3000/api/customers",{
+          headers: {
+            'Authorization': `Bearer ${token}` // Incluir el JWT en la cabecera
+          }
+        });
         if (!response.ok) {
           throw new Error("Error al obtener los clientes");
         }
